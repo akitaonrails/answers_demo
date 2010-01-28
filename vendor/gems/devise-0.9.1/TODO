@@ -1,0 +1,4 @@
+* Make test run with DataMapper
+* Add Registerable support
+* Add http authentication support
+* Extract Activatable tests from Confirmable

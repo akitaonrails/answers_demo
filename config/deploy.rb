@@ -204,3 +204,11 @@ namespace :ssh do
     run "chmod 755 #{ssh_path}/authorized_keys"
   end
 end
+
+after 'deploy:update_code', 'gems:bundle'
+
+namespace :gems do
+  task :bundle, :roles => :app do
+    run "cd #{release_path} && gem bundle --cached"
+  end
+end

@@ -23,6 +23,7 @@
 <p><%= h answer.answer %></p>
 <% end -%>
 
+<% if current_user -%>
 <p><strong>Add Reply</strong></p>
 <% form_for [@product,@question,@question.answers.build] do |f| -%>
 	<p><%= f.text_area :answer %></p>
@@ -36,3 +37,4 @@
   <% end -%>
   <%= link_to "View All", collection_path %>
 </p>
+<% end %>

@@ -83,3 +83,8 @@ a {
 #login {
 	float: right;
 }
+
+#tags {
+	float: right;
+	vertical-align: top;
+}

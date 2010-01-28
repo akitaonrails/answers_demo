@@ -1,4 +1,9 @@
 <% title "Answers" %>
+<div id="tags">
+	This question is tagged <br/>
+	<i><%= @question.tag_list %></i>
+</div>
+
 <p>
 	<h3><%=h @question.question %></h3>
 	<small>
@@ -26,7 +31,7 @@
 
 <p>
 	<% if @question.user == current_user -%>
-  <%= link_to "Edit", resource_path %> |
+  <%= link_to "Edit", edit_resource_path %> |
   <%= link_to "Destroy", [@product,@question], :confirm => 'Are you sure?', :method => :delete %> |
   <% end -%>
   <%= link_to "View All", collection_path %>

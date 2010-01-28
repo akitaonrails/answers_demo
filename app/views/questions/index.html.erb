@@ -8,6 +8,7 @@
 <% for question in @questions %>
 <p>
 	<strong><%= link_to question.question, resource_path(question) %></strong>
+	<% if question.answered? -%><span id="answered">[Answered]</span><% end -%>
 	<br/>
 	<small>Asked by <%= question.user.try(:name) %> on <%= question.created_at.to_formatted_s(:short) %></small>
 </p>

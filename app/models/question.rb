@@ -6,6 +6,8 @@ class Question < ActiveRecord::Base
   
   acts_as_taggable_on :tags
   
+  validates_presence_of :user, :product
+  
   def answered?
     answers_count > 0
   end

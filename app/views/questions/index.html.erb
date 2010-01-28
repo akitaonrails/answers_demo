@@ -1,0 +1,18 @@
+<% title "Questions" %>
+
+<% form_tag collection_path, :method => "get" do -%>
+  <%= text_field_tag :s %>
+  <%= submit_tag "Search", :name => nil %>
+<% end -%>
+
+<% for question in @questions %>
+<p>
+	<strong><%= link_to question.question, resource_path(question) %></strong>
+	<br/>
+	<small>Asked by <%= question.user.try(:name) %> on <%= question.created_at.to_formatted_s(:short) %></small>
+</p>
+<% end %>
+
+<p><%= will_paginate @posts %></p>
+
+<p><%= link_to "New Question", new_resource_path %></p>

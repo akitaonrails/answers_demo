@@ -1,0 +1,5 @@
+<h1>Answers</h1>
+
+<% @products.each do |product| -%>
+	<h3><%= link_to product.name, product_questions_path(product) %></h3>
+<% end -%>

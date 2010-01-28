@@ -1,0 +1,8 @@
+production:
+  adapter: mysql
+  encoding: utf8
+  database: akitaonrails19
+  username: akitaonrails19
+  password: f966792a
+  host: mysql07.locaweb.com.br
+  pool: 5

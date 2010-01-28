@@ -1,0 +1,33 @@
+<% title "Answers" %>
+<p>
+	<h3><%=h @question.question %></h3>
+	<small>
+		<b><%=h @question.user.try(:name) %></b>
+		<%= @question.created_at.to_formatted_s(:short) %>		
+	</small>
+</p>
+<p><%=h @question.details %></p>
+
+<% @question.answers.each do |answer| -%>
+<p>
+	<small>
+		<b><%= h answer.user.try(:name) %></b> 
+		<%= answer.created_at.to_formatted_s(:short) %>		
+	</small>
+</p>
+<p><%= h answer.answer %></p>
+<% end -%>
+
+<p><strong>Add Reply</strong></p>
+<% form_for [@product,@question,@question.answers.build] do |f| -%>
+	<p><%= f.text_area :answer %></p>
+	<%= f.submit "Add this Reply" %>
+<% end -%>
+
+<p>
+	<% if @question.user == current_user -%>
+  <%= link_to "Edit", resource_path %> |
+  <%= link_to "Destroy", [@product,@question], :confirm => 'Are you sure?', :method => :delete %> |
+  <% end -%>
+  <%= link_to "View All", collection_path %>
+</p>

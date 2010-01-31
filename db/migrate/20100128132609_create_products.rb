@@ -4,12 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
 
       t.timestamps
-    end
-    
-    Product.create :name => "Basecamp"
-    Product.create :name => "Campfire"
-    Product.create :name => "Highrise"
-    Product.create :name => "Backpack"
+    end    
   end
 
   def self.down

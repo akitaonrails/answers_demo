@@ -12,3 +12,4 @@ coverage/
 dump.*
 vendor/gems/ruby/1.8/gems
 vendor/gems/ruby/1.8/gems/**/*
+rerun.txt
